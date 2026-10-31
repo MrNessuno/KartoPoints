@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#ECE9F6;--panel:#fff;--ink:#1D1833;--muted:#665F82;--line:#D3CDE6;--btn:#E5E1F2;--plus:#1F7A47;--minus:#B0303F;--pa:#8A4BC4;--pb:#C98410;--shade:rgba(20,15,40,.55);--pnl:var(--panel);--inst:0px;--insb:0px;--sat:calc(env(safe-area-inset-top,0px) + var(--inst));--sab:calc(env(safe-area-inset-bottom,0px) + var(--insb));
+:root{--bg:#ECE9F6;--panel:#fff;--ink:#1D1833;--muted:#665F82;--line:#D3CDE6;--btn:#E5E1F2;--plus:#1F7A47;--minus:#B0303F;--pa:#8A4BC4;--pb:#C98410;--shade:rgba(20,15,40,.55);--pnl:var(--panel);--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px);
 box-sizing:border-box;padding:var(--sat) env(safe-area-inset-right,0px) var(--sab) env(safe-area-inset-left,0px)}
 
 :root[data-theme="dark"]{--bg:#12101B;--panel:#1D1830;--ink:#F1EEFA;--muted:#A39DBF;--line:#342D4F;--btn:#2B2445;--plus:#6FCF97;--minus:#F08A96;--pa:#B796F0;--pb:#E8AE4A;--shade:rgba(0,0,0,.65)}
@@ -148,7 +148,6 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--pc,var(--pa));o
 .f1{transform:translateZ(var(--z,60px))}.f6{transform:rotateY(180deg) translateZ(var(--z,60px))}.f3{transform:rotateY(90deg) translateZ(var(--z,60px))}.f4{transform:rotateY(-90deg) translateZ(var(--z,60px))}.f2{transform:rotateX(90deg) translateZ(var(--z,60px))}.f5{transform:rotateX(-90deg) translateZ(var(--z,60px))}
 .cf.ci{--z:55px;border-radius:0;background:#C4BA9B;box-shadow:none;padding:0}
 .dshadow{width:110px;height:16px;border-radius:50%;background:rgba(0,0,0,.4);filter:blur(6px);margin-top:70px}
-.ment.st{cursor:default;padding:10px 16px}.st small{display:block;max-width:none;text-align:left}.stp{display:flex;align-items:center;gap:8px}.stp button{min-height:40px;width:40px;padding:0;font-size:20px}.stp b{min-width:30px;text-align:center;font-size:17px}
 .fly{position:fixed;z-index:60;pointer-events:none;margin:0}
 </style>
 </head>
@@ -188,7 +187,7 @@ step1:"Passo 1 di 2",pool_t:"Bacino Empatico",pool_p:"Somma dei punti delle mani
 step2:"Passo 2 di 2",deck_t:"Manifestazioni nel mazzo",deck_p:"Quante carte Manifestazione ti restano nel mazzo? Ognuna vale 5 punti.",deck_aria:"Manifestazioni rimaste nel mazzo",less:"Una in meno",more:"Una in più",confirm:"Conferma",pts_n:"= {0} punti",
 draw:"Pareggio",each:"{0} punti a testa",wins:"vince {0} a {1}",r_eff:"Effetti",r_pool:"Bacino Empatico",r_deck:"Mazzo",r_tot:"Totale",c1:"carta",cn:"carte",review:"Rivedi i dati",
 time_t:"Tempo",m5:"−5 min",p5:"+5 min",t_up:"Tempo scaduto",t_up_p:"Finite il turno in corso, poi giocate 1 turno addizionale. Alla fine vince chi ha più punti nel Bacino Empatico. In Svizzera la parità è un pareggio.",
-h_all:"Tutti",mn_theme:"Tema",th_dark:"Scuro",th_light:"Chiaro",mn_fs:"Schermo intero",mn_ins:"Margine fotocamera",ins_hint:"Solo a schermo intero, in pixel. Aumentalo se la fotocamera copre i tasti.",fs_on:"Attivo",fs_off:"Disattivo",fs_na:"Non disponibile: usa «Aggiungi alla schermata Home»",dice_aria:"Lancia un dado a 6 facce",d_hint:"Tocca per lanciare un d6",mn_lang:"Lingua",mn_guide:"Guida",mn_hist:"Cronologia",flip:"Gira ↻",
+h_all:"Tutti",mn_theme:"Tema",th_dark:"Scuro",th_light:"Chiaro",mn_fs:"Schermo intero",fs_on:"Attivo",fs_off:"Disattivo",fs_na:"Non disponibile: usa «Aggiungi alla schermata Home»",dice_aria:"Lancia un dado a 6 facce",d_hint:"Tocca per lanciare un d6",mn_lang:"Lingua",mn_guide:"Guida",mn_hist:"Cronologia",flip:"Gira ↻",
 h_empty:"Ancora nessuna modifica ai punti.",h_copy:"Copia come testo",h_copied:"Copiato ✓",h_undo:"Annulla",h_undone:"annullata",h_corr:"correzione",h_fin:"conteggio finale confermato: Bacino {0}, Mazzo {1} × 5",
 h_conf_t:"Annullare questa modifica?",h_conf_p:"Viene aggiunta una riga di correzione ({0}). La riga originale resta visibile, segnata come annullata.",h_note:"Le righe non si cancellano mai. La cronologia si azzera con «Nuova».",
 g_skip:"Salta",g_end:"Fine",
@@ -200,7 +199,7 @@ g4_t:"Segnalini",g4_x:"«+ Segnalino» aggiunge un segnalino a scelta. Alcuni si
 g5_t:"Umori",g5_x:"Mostra il retro delle carte con i vantaggi tra umori. Tocca un simbolo per segnare un umore tributato: compare come simbolo vicino al nome.",
 g6_t:"Timer",g6_x:"Tocca per avviare o fermare i 50 minuti. Tieni premuto per cambiarli di ±5 minuti. Allo scadere ti ricorda il turno addizionale.",
 g7_t:"Nuova partita",g7_x:"Tocca due volte per azzerare tutto: punti, segnalini, umori, timer e cronologia.",
-g8_t:"Menu",g8_x:"Qui trovi la Cronologia (con annullamento, filtro e copia come testo), la Lingua, il Tema chiaro/scuro, lo Schermo intero (con il margine per la fotocamera) e questa Guida.",
+g8_t:"Menu",g8_x:"Qui trovi la Cronologia (con annullamento, filtro e copia come testo), la Lingua, il Tema chiaro/scuro, lo Schermo intero e questa Guida.",
 g9_t:"Dado",g9_x:"Apre un dado a 6 facce a tutto schermo: tocca per lanciarlo, il risultato compare in basso per entrambi i giocatori. «Chiudi» per uscire."},
 en:{player:"Player",name_aria:"Player name",tot_aria:"Total points",other:"Other",add_seg:"+ Counter",menu:"Menu",humors:"Temperaments",nw:"New",sure:"Sure?",
 fin:"Final count",fin_ok:"Count confirmed ✓",fin_view:"View summary",timer_aria:"Timer: tap to start or stop, long press to change the time",
@@ -211,7 +210,7 @@ step1:"Step 1 of 2",pool_t:"Empathic Vessel",pool_p:"Total points of the manifes
 step2:"Step 2 of 2",deck_t:"Manifestations in deck",deck_p:"How many Manifestation cards are left in your deck? Each is worth 5 points.",deck_aria:"Manifestations left in the deck",less:"One less",more:"One more",confirm:"Confirm",pts_n:"= {0} points",
 draw:"Draw",each:"{0} points each",wins:"wins {0} to {1}",r_eff:"Effects",r_pool:"Empathic Vessel",r_deck:"Deck",r_tot:"Total",c1:"card",cn:"cards",review:"Review data",
 time_t:"Time",m5:"−5 min",p5:"+5 min",t_up:"Time's up",t_up_p:"Finish the current turn, then play 1 additional turn. At the end, the player with the most points in their Empathic Vessel wins. In Swiss rounds a tie is a draw.",
-h_all:"All",mn_theme:"Theme",th_dark:"Dark",th_light:"Light",mn_fs:"Full screen",mn_ins:"Camera margin",ins_hint:"Full screen only, in pixels. Increase it if the camera covers the buttons.",fs_on:"On",fs_off:"Off",fs_na:"Not available: use “Add to Home Screen”",dice_aria:"Roll a six-sided die",d_hint:"Tap to roll a d6",mn_lang:"Language",mn_guide:"Guide",mn_hist:"History",flip:"Flip ↻",
+h_all:"All",mn_theme:"Theme",th_dark:"Dark",th_light:"Light",mn_fs:"Full screen",fs_on:"On",fs_off:"Off",fs_na:"Not available: use “Add to Home Screen”",dice_aria:"Roll a six-sided die",d_hint:"Tap to roll a d6",mn_lang:"Language",mn_guide:"Guide",mn_hist:"History",flip:"Flip ↻",
 h_empty:"No point changes yet.",h_copy:"Copy as text",h_copied:"Copied ✓",h_undo:"Undo",h_undone:"undone",h_corr:"correction",h_fin:"final count confirmed: Vessel {0}, Deck {1} × 5",
 h_conf_t:"Undo this change?",h_conf_p:"A correction line ({0}) is added. The original line stays visible, marked as undone.",h_note:"Lines are never deleted. History is cleared with “New”.",
 g_skip:"Skip",g_end:"Done",
@@ -223,7 +222,7 @@ g4_t:"Counters",g4_x:"“+ Counter” adds a counter of your choice. Some accumu
 g5_t:"Temperaments",g5_x:"Shows the back of the cards with the advantages between Temperaments. Tap a symbol to track a tributed Temperament: it shows up as a symbol next to the name.",
 g6_t:"Timer",g6_x:"Tap to start or stop the 50 minutes. Long press to change it by ±5 minutes. When it runs out it reminds you of the additional turn.",
 g7_t:"New game",g7_x:"Tap twice to reset everything: points, counters, temperaments, timer and history.",
-g8_t:"Menu",g8_x:"Here you find History (with undo, filter and copy as text), Language, Light/Dark theme, Full screen (with the camera margin) and this Guide.",
+g8_t:"Menu",g8_x:"Here you find History (with undo, filter and copy as text), Language, Light/Dark theme, Full screen and this Guide.",
 g9_t:"Die",g9_x:"Opens a full-screen six-sided die: tap to roll it, the result appears at the bottom for both players. “Close” to leave."}
 };
 /* Passi della guida: s = selettore (funzione del giocatore p) dell'elemento da evidenziare, k = indice dei testi g{k}_t / g{k}_x */
@@ -239,14 +238,13 @@ var GUIDE_STEPS=[
  {s:function(p){return '.half[data-p="'+p+'"] .diceb'},k:9},
  {s:function(p){return '.half[data-p="'+p+'"] .menub'},k:8}
 ];
-var S={names:["",""],pts:[0,0],seg:[[],[]],orb:[{},{}],fin:[null,null],log:[],lid:0,lang:"it",theme:"dark",inset:32};
+var S={names:["",""],pts:[0,0],seg:[[],[]],orb:[{},{}],fin:[null,null],log:[],lid:0,lang:"it",theme:"dark"};
 try{var r=localStorage.getItem(K);if(r){S=Object.assign(S,JSON.parse(r))}}catch(e){}
 if(!S.fin||S.fin.length!==2)S.fin=[null,null];
 if(!S.orb||S.orb.length!==2)S.orb=[{},{}];
 if(!Array.isArray(S.log))S.log=[];
 if(S.lang!=="en")S.lang="it";
 if(S.theme!=="light")S.theme="dark";
-S.inset=Math.min(96,Math.max(0,+S.inset||0));
 S.names=S.names.map(function(n,i){return (n==="Giocatore "+(i+1)||n==="Player "+(i+1))?"":(n||"")});
 S.orb=S.orb.map(function(o){if(Array.isArray(o)){var c={};o.forEach(function(k){c[k]=(c[k]||0)+1});return c}return o||{}});
 function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
@@ -345,15 +343,13 @@ function flyOrb(f){
   var a=c.animate([{transform:"translate(0,0) scale(1.25)"+rot},{transform:"translate("+(dx*.45+side)+"px,"+(dy*.2)+"px) scale(1.4)"+rot,offset:.35},{transform:"translate("+dx+"px,"+dy+"px) scale(1)"+rot}],{duration:520,easing:"cubic-bezier(.45,.05,.55,.95)"});
   a.onfinish=function(){c.remove();t.style.visibility="";if(bd){bd.textContent=n;bd.style.display=""}t.animate([{transform:"scale(1)"},{transform:"scale(1.3)"},{transform:"scale(1)"}],{duration:220,easing:"ease-out"})};
 }
-/* ---- Tema, schermo intero, margine fotocamera, sfondo ---- */
-/* A schermo intero il notch/foro fotocamera può coprire i controlli: S.inset (px) è un margine minimo sopra e sotto (simmetrico), usato solo a schermo intero e solo per la parte non già coperta da env(safe-area-inset-*). */
+/* ---- Tema, schermo intero, sfondo ---- */
 function px(side,expr){var e=document.createElement("div");e.style.cssText="position:fixed;visibility:hidden;pointer-events:none;padding-"+side+":"+expr;document.body.appendChild(e);var v=parseFloat(getComputedStyle(e)["padding"+side.charAt(0).toUpperCase()+side.slice(1)])||0;document.body.removeChild(e);return v}
-function applyInset(){var w=fsEl()?S.inset:0,s=document.documentElement.style;s.setProperty("--inst",Math.max(0,w-px("top","env(safe-area-inset-top,0px)"))+"px");s.setProperty("--insb",Math.max(0,w-px("bottom","env(safe-area-inset-bottom,0px)"))+"px")}
 function applyTheme(){document.documentElement.dataset.theme=S.theme}
 function fsEl(){return document.fullscreenElement||document.webkitFullscreenElement}
 function fsOk(){var e=document.documentElement;return !!(e.requestFullscreen||e.webkitRequestFullscreen)}
 function toggleFs(){try{var e=document.documentElement;if(fsEl()){(document.exitFullscreen||document.webkitExitFullscreen).call(document)}else if(fsOk()){var r=(e.requestFullscreen||e.webkitRequestFullscreen).call(e);if(r&&r.catch)r.catch(function(){})}}catch(x){}}
-["fullscreenchange","webkitfullscreenchange"].forEach(function(ev){document.addEventListener(ev,function(){applyInset();if(!mnEl.hidden&&mv.view==="home")renderMenu()})});
+["fullscreenchange","webkitfullscreenchange"].forEach(function(ev){document.addEventListener(ev,function(){if(!mnEl.hidden&&mv.view==="home")renderMenu()})});
 if(BG){document.documentElement.classList.add("hasbg");document.getElementById("bgart").style.setProperty("--bgimg","url("+BG+")")}
 /* ---- Dado a 6 facce ---- */
 var dcEl=document.getElementById("dc"),rolling=false,cube=null,dns=null;
@@ -399,8 +395,7 @@ function renderMenu(){
       '<button class="ment" data-a="guide"><span>'+tr("mn_guide")+'</span><small>›</small></button>'+
       '<button class="ment" data-a="mgo" data-v="hist"><span>'+tr("mn_hist")+'</span><small>'+S.log.length+' ›</small></button>'+
       '<button class="ment" data-a="theme"><span>'+tr("mn_theme")+'</span><small>'+(S.theme==="dark"?tr("th_dark"):tr("th_light"))+'</small></button>'+
-      '<button class="ment" data-a="fs"><span>'+tr("mn_fs")+'</span><small>'+(fsOk()?(fsEl()?tr("fs_on"):tr("fs_off")):tr("fs_na"))+'</small></button>'+
-      '<div class="ment st"><span>'+tr("mn_ins")+'<small>'+tr("ins_hint")+'</small></span><span class="stp"><button data-a="insm" aria-label="−">−</button><b>'+S.inset+'</b><button data-a="insp" aria-label="+">+</button></span></div></div>';
+      '<button class="ment" data-a="fs"><span>'+tr("mn_fs")+'</span><small>'+(fsOk()?(fsEl()?tr("fs_on"):tr("fs_off")):tr("fs_na"))+'</small></button></div>';
   }else if(v==="lang"){
     body='<div class="mlist"><button class="lb" data-a="lang" data-l="it" aria-pressed="'+(S.lang==="it")+'">Italiano</button><button class="lb" data-a="lang" data-l="en" aria-pressed="'+(S.lang==="en")+'">English</button></div>';
   }else if(v==="undo"){
@@ -536,7 +531,6 @@ document.addEventListener("click",function(ev){
   if(a==="dclose"){closeDice();return}
   if(a==="theme"){S.theme=S.theme==="dark"?"light":"dark";applyTheme();save();renderMenu();return}
   if(a==="fs"){toggleFs();return}
-  if(a==="insm"||a==="insp"){S.inset=Math.min(96,Math.max(0,S.inset+(a==="insp"?4:-4)));applyInset();save();renderMenu();return}
   if(a==="mclose"){closeMenu();return}
   if(a==="mflip"){mv.rot=!mv.rot;renderMenu();return}
   if(a==="hf"){mv.f=+b.dataset.f;renderMenu();return}
@@ -588,7 +582,7 @@ document.addEventListener("input",function(ev){
 async function lock(){try{wl=await navigator.wakeLock.request("screen")}catch(e){}}
 document.addEventListener("pointerdown",function(){if(!wl||wl.released)lock()},{passive:true});
 document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")lock()});
-applyTheme();applyInset();applyLang();upd();
+applyTheme();applyLang();upd();
 })();
 </script>
 </body>
